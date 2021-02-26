@@ -1,0 +1,61 @@
+{
+	"pages": [ //主包、数组中第一项表示应用启动页
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/find/find",
+			"style": {
+				"navigationBarTitleText": "发现"
+			}
+		}
+	],
+	"subPackages": [ //分包
+		{
+			"root": "pages_user",
+			"pages": [{
+				"path": "user/user",
+				"style": {
+					"navigationBarTitleText": "用户"
+				}
+			}]
+		}, {
+			"root": "pages_dev",
+			"pages": [{
+				"path": "dev/dev",
+				"style": {
+					"navigationBarTitleText": "测试"
+				}
+			}]
+		}
+	],
+	"tabBar": {
+		"color": "#000",
+		"selectedColor": "#436EEE",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"text": "首页"
+		}, {
+			"pagePath": "pages/find/find",
+			"text": "发现"
+		}]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "模板",
+		"navigationBarBackgroundColor": "#436EEE",
+		"backgroundColor": "#F8F8F8"
+	},
+	"condition": { //模式配置，仅开发期间生效，启动指定页面
+		"current": 0, //当前激活的模式（list 的索引项）
+		"list": [{
+			"name": "测试", //模式名称
+			"path": "pages_dev/dev/dev" //启动页面，必选
+		}]
+	}
+}
